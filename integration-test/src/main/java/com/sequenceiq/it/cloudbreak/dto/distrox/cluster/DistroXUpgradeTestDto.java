@@ -3,6 +3,7 @@ package com.sequenceiq.it.cloudbreak.dto.distrox.cluster;
 import javax.inject.Inject;
 
 import com.sequenceiq.distrox.api.v1.distrox.model.upgrade.DistroXUpgradeReplaceVms;
+import com.sequenceiq.distrox.api.v1.distrox.model.upgrade.DistroXUpgradeShowAvailableImages;
 import com.sequenceiq.distrox.api.v1.distrox.model.upgrade.DistroXUpgradeV1Request;
 import com.sequenceiq.distrox.api.v1.distrox.model.upgrade.DistroXUpgradeV1Response;
 import com.sequenceiq.it.cloudbreak.Prototype;
@@ -41,6 +42,16 @@ public class DistroXUpgradeTestDto extends AbstractSdxTestDto<DistroXUpgradeV1Re
 
     public DistroXUpgradeTestDto withReplaceVms(DistroXUpgradeReplaceVms replaceVms) {
         getRequest().setReplaceVms(replaceVms);
+        return this;
+    }
+
+    public DistroXUpgradeTestDto withLockComponents(Boolean lockComponents) {
+        getRequest().setLockComponents(lockComponents);
+        return this;
+    }
+
+    public DistroXUpgradeTestDto withShowLatestAvailableImagePerRuntime(DistroXUpgradeShowAvailableImages showAvailableImages) {
+        getRequest().setShowAvailableImages(showAvailableImages);
         return this;
     }
 }
